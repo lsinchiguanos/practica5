@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">WhatsApp</string>
-    <string name="tb_title">WhatsApp</string>
+    <string name="app_toolbar_title">WhatsApp</string>
 </resources>

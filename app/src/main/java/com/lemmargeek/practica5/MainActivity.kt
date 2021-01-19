@@ -1,10 +1,13 @@
 package com.lemmargeek.practica5
 
+import android.app.SearchManager
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +21,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.moremenu, menu)
+        val inflater = menuInflater
+        inflater.inflate(R.menu.moremenu, menu)
+        val manager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+        val searchItem = menu?.findItem(R.id.search)
+        val searchView = searchItem?.actionView as SearchView
+
+        searchView.setSearchableInfo(manager.getSearchableInfo(componentName))
+
+        searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean{
+                searchView.clearFocus()
+                searchView.setQuery("",false)
+                searchItem.collapseActionView()
+                Toast.makeText(this@MainActivity, "$query", Toast.LENGTH_LONG).show()
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+        })
+
         return true
     }
 
@@ -32,8 +56,6 @@ class MainActivity : AppCompatActivity() {
             R.id.msg_top -> Toast.makeText(applicationContext, "Mensajes destacados", Toast.LENGTH_SHORT).show()
             R.id.setting -> Toast.makeText(applicationContext, "Ajustes", Toast.LENGTH_SHORT).show()
         }
-
         return false
-
     }
 }

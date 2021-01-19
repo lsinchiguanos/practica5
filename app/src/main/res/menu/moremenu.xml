@@ -26,7 +26,8 @@
         android:id="@+id/search"
         android:title="Buscar"
         android:icon="@drawable/ic_baseline_search_24"
-        app:showAsAction="always"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
          ></item>
 
 </menu>
