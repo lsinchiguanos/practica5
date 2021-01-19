@@ -16,4 +16,40 @@
         app:titleTextColor="@color/white">
     </androidx.appcompat.widget.Toolbar>
 
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:background="@color/teal_green_dark">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_camara"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:icon="@drawable/ic_baseline_photo_camera_24"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_chats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CHATS" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_estados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ESTADOS" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_llamadas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LLAMADAS" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></androidx.viewpager.widget.ViewPager>
+
 </LinearLayout>
