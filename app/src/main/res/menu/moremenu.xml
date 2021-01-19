@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/new_group"
+        android:title="Nuevo grupo"></item>
+
+    <item
+        android:id="@+id/new_difusion"
+        android:title="Nueva difusión"></item>
+
+    <item
+        android:id="@+id/scan_web"
+        android:title="WhatsApp Web"></item>
+
+    <item
+        android:id="@+id/msg_top"
+        android:title="Mensajes destacados"></item>
+
+    <item
+        android:id="@+id/setting"
+        android:title="Ajustes"></item>
+
+    <!-- Agregando el icono buscar -->
+    <item
+        android:id="@+id/search"
+        android:title="Buscar"
+        android:icon="@drawable/ic_baseline_search_24"
+        app:showAsAction="always"
+         ></item>
+
+</menu>
