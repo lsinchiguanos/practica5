@@ -20,7 +20,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:background="@color/teal_green_dark">
+        android:background="@color/teal_green_dark"
+        app:tabTextColor="@color/white"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabInlineLabel="true">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab_camara"
