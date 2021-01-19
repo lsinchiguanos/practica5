@@ -8,8 +8,14 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
+import com.lemmargeek.practica5.fragments.Fragment_Camara
+import com.lemmargeek.practica5.fragments.Fragment_Chat
+import com.lemmargeek.practica5.fragments.Fragment_Estados
+import com.lemmargeek.practica5.fragments.Fragment_Llamadas
+import com.lemmargeek.practica5.fragments.adapters.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +28,17 @@ class MainActivity : AppCompatActivity() {
         toolbar.setNavigationOnClickListener {
             Toast.makeText(this, "Toolbar", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun settingTabs(){
+        val adaptador = ViewPagerAdapter(supportFragmentManager)
+        adaptador.addFragment(Fragment_Camara(), "")
+        adaptador.addFragment(Fragment_Chat(), "Chats")
+        adaptador.addFragment(Fragment_Estados(), "Estados")
+        adaptador.addFragment(Fragment_Llamadas(), "Llamadas")
+        viewPager.adapter = adaptador
+        menu_tabs.setupWithViewPager(viewPager)
+        menu_tabs.getTabAt(0)!!.setIcon(R.drawable.ic_baseline_photo_camera_24)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
