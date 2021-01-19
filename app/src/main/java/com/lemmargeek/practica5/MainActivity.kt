@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         toolbar.setNavigationOnClickListener {
             Toast.makeText(this, "Toolbar", Toast.LENGTH_SHORT).show()
         }
+        settingTabs()
     }
 
     private fun settingTabs(){
