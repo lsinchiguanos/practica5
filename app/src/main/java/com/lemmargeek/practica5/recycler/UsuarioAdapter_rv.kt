@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.lemmargeek.practica5.models.Usuario
 
-class UsuarioAdapter_rv(val List<Usuario>):RecyclerView.Adapter<UsuarioAdapter_rv.UsuarioHolder>() {
+class UsuarioAdapter_rv(val usuario:List<Usuario>):RecyclerView.Adapter<UsuarioAdapter_rv.UsuarioHolder>() {
 
     class UsuarioHolder(val view: View): RecyclerView.ViewHolder(view){}
 
@@ -17,7 +17,5 @@ class UsuarioAdapter_rv(val List<Usuario>):RecyclerView.Adapter<UsuarioAdapter_r
         TODO("Not yet implemented")
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount(): Int = usuario.size
 }
